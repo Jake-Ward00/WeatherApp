@@ -1,0 +1,180 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;  /* light grey background */
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4CAF50;  /* Green*/
+    color: white;
+    padding: 20px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .menu a {
+    margin-left: 20px;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar .menu a:hover {
+    color: #ffb74d;  /* orange accent on hover for top nav bar */
+}
+
+/* Hero Section */
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1531961152577-1bc43a71a430?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg1MnwxfGFsbHwxfHx8fHx8fHx8fHwxNjg2OTc0Mzc3&ixlib=rb-1.2.1&q=80&w=1080') center/cover;
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+header .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+header .hero-content p {
+    font-size: 1.5rem;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+header .cta-btn {
+    background-color: #ffb74d;/*check weather button*/
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header .cta-btn:hover {
+    background-color: #ff9800;/*check weather button darker orange on hover*/
+}
+
+/* Featured Section */
+.featured {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.featured-item {
+    width: 30%;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #4CAF50;
+}
+
+.featured-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.featured-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.featured-item .cta-btn {
+    background-color: #4CAF50; 
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.featured-item:hover {
+    transform: translateY(-10px);
+}
+
+.featured-item:hover .cta-btn {
+    background-color: #ff9800;  /* change to dark orange on hover for the bottom bar */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    header .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .menu a {
+        margin: 10px 0;
+    }
+
+    .featured {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

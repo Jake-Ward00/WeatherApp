@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Jake's Weather App</a>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/live_weather">Live Weather</a>
+                <a href="/comparison">City Comparison</a>
+                <a href="/global_warming">Global Warming Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <h1>Real-Time Weather Information</h1>
+            <p>Find the latest weather updates for any city worldwide.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <form method="POST">
+            <h2>Enter City Name:</h2>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        {% if weather %}
+            <div class="weather-card">
+                <h2>Weather in {{ weather.city }}</h2>
+                <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+                <p><strong>Description:</strong> {{ weather.description }}</p>
+                <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+                <p><strong>Pressure:</strong> {{ weather.pressure }} hPa</p>
+            </div>
+        {% elif error %}
+            <div class="weather-card">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Developed by Jake Ward. <a href="https://github.com/yourrepo">GitHub</a></p>
+    </footer>
+</body>
+</html>

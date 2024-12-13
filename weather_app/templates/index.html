@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Jake's Weather App</a>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/live_weather">Live Weather</a>
+                <a href="/comparison">City Comparison</a>
+                <a href="/global_warming">Global Warming Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <h1>Stay Ahead with Real-Time Weather Updates</h1>
+            <p>Get accurate weather data for any city, and track global warming trends.</p>
+            <a href="/live_weather" class="cta-btn">Check the Weather</a>
+        </div>
+    </header>
+
+<section class="featured">
+    <div class="featured-item">
+        <img src="{{ url_for('static', filename='weather/weather.jpg') }}" alt="City Weather">
+        <h3>Live Weather Updates</h3>
+        <p>Stay informed about the weather in real-time for any city around the world.</p>
+        <a href="/live_weather" class="cta-btn">Explore</a>
+    </div>
+
+        <div class="featured-item">
+            <img src="{{ url_for('static', filename='city/city.jpg') }}" alt="City Weather">
+            <h3>Compare Cities</h3>
+            <p>Compare temperatures and weather between different cities instantly.</p>
+            <a href="/comparison" class="cta-btn">Compare Now</a>
+        </div>
+
+        <div class="featured-item">
+            <img src="{{ url_for('static', filename='globalW/globalW.jpg') }}" alt="City Weather">
+            <p>Track the impact of global warming and explore predictions for the future.</p>
+            <a href="/global_warming" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jake Ward. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+

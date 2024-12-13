@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Warming Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Jake's Weather App</a>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/live_weather">Live Weather</a>
+                <a href="/comparison">City Comparison</a>
+                <a href="/global_warming">Global Warming Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <h1>Global Warming Analysis</h1>
+            <p>Track the impact of global warming through historical and future predictions.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="graph-container">
+            <h2>Historical Data and Predictions</h2>
+            <img src="data:image/png;base64,{{ img_data }}" alt="Global Temperature Anomaly">
+        </div>
+
+        <div class="data-table">
+            <h3>Predicted Future Temperatures</h3>
+            {{ future_data | safe }}
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by Jake Ward. <a href="https://github.com/yourrepo">GitHub</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Temperature Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Jake's Weather App</a>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/live_weather">Live Weather</a>
+                <a href="/comparison">City Comparison</a>
+                <a href="/global_warming">Global Warming Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero-content">
+            <h1>Compare City Temperatures</h1>
+            <p>Compare temperatures across different cities instantly.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        {% if img_data %}
+            <div class="graph-container">
+                <h2>Temperature Comparison</h2>
+                <img src="data:image/png;base64,{{ img_data }}" alt="City Temperature Comparison">
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            <h2>Enter Cities (comma-separated):</h2>
+            <input type="text" id="cities" name="cities" required>
+            <button type="submit">Compare Cities</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Developed by Jake Ward. <a href="https://github.com/yourrepo">GitHub</a></p>
+    </footer>
+</body>
+</html>
+
